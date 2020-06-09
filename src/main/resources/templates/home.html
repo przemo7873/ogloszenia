@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="layout">
+<head>
+    <title>Furka4U</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+    <section layout:fragment="content">
+        <h2>Furka4U - cz.1</h2>
+        <p th:text="|${producent.id} ${producent.name}|">TODO write content</p>
+        <p th:text="|${model.id} ${model.name}|">TODO write content</p>
+        <h2>Furka4U - cz.2</h2>
+        <h4>Car Manufacturers</h4>
+        <p th:each="cm : ${carManufacturers}" th:text="${cm.name}"></p>
+        <h4>Car Models</h4>
+        <p th:each="cm : ${carModels}" th:text="${cm.name}"></p>
+        <h4>Body Styles</h4>
+        <p th:each="bs : ${bodyStyles}" th:text="${bs.name}"></p>
+        <h4>Fuel Types</h4>
+        <p th:each="ft : ${fuelTypes}" th:text="${ft.name}"></p>
+    </section>
+</body>
+</html>
