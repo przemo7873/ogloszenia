@@ -131,7 +131,7 @@ public class HomeController
         List<Offer> offers;
         if(offerFilter.getManufacturerId()!=null)
         {
-            List<CarModel> carModels = offersService.getCarModels();
+            List<CarModel> carModels = offersService.getCarModels(offerFilter.getManufacturerId());
             model.addAttribute("carModels", carModels);
         }
         offers = offersService.getOffers(offerFilter);

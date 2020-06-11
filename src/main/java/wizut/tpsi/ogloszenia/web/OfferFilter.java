@@ -9,6 +9,15 @@ public class OfferFilter
     Integer yearMax;
     String description;
     String sort;
+    String sort2;
+
+    public String getSort2() {
+        return sort2;
+    }
+
+    public void setSort2(String sort2) {
+        this.sort2 = sort2;
+    }
 
     public String getSort() {
         return sort;

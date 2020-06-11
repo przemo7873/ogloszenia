@@ -47,7 +47,10 @@ public class OffersService
         }    
         if(filter.getModelId()!=null)
         {
-            jpql= jpql + "AND o.model.id = :id2 ";
+            if(isFiltered==false) jpql=jpql+"where ";
+            else jpql=jpql+"AND ";
+            isFiltered=true;
+            jpql= jpql + "o.model.id = :id2 ";
         }
         if(filter.getFuelId()!=null)
         {
@@ -79,7 +82,8 @@ public class OffersService
         }
         
         jpql= jpql + "order by " + filter.getSort();
-
+        if(filter.getSort2()!=null)
+            jpql= jpql + " " + filter.getSort2();
          
         TypedQuery<Offer> query = em.createQuery(jpql, Offer.class);
         if(filter.getManufacturerId()!=null)
